@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
 url: ""
 
 github:
-  username: github_username # change to your GitHub username
+  username: ph1z3r # change to your GitHub username
 
 twitter:
   username: twitter_username # change to your Twitter username
@@ -38,7 +38,7 @@ social:
   email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/ph1z3r # change to your Twitter homepage
+    # - https://twitter.com/ph1z3r # change to your Twitter homepage
     - https://github.com/ph1z3r # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -95,7 +95,7 @@ theme_mode: # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn:
+img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
 avatar: https://account.hackthebox.com/storage/users/796fcd54-59a0-43cc-90dc-5aa873be9f20-avatar.png
@@ -108,8 +108,8 @@ social_preview_image: # string, local or CORS resources
 toc: true
 
 comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: # [disqus | utterances | giscus]
+  active: # Global switch for the post-comment system. Keeping it empty means disabled.
+  # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -139,18 +139,11 @@ assets:
 
 pwa:
   enabled: true # The option for PWA feature (installable)
-  cache:
-    enabled: true # The option for PWA offline cache
-    # Paths defined here will be excluded from the PWA cache.
-    # Usually its value is the `baseurl` of another website that
-    # shares the same domain name as the current website.
-    deny_paths:
-      # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
-
+  
 paginate: 10
 
 # The base URL of your site
-baseurl: ""
+baseurl: "ph1z3r.github.io"
 
 # ------------ The following options are not recommended to be modified ------------------
 
