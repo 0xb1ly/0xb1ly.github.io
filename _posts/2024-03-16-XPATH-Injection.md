@@ -44,7 +44,7 @@ Hey hackers!! Today, I'm explaining the exploitation of the error-based SQL inje
 
 `https://example.com/jounral/dashboard/sales?pageNumber=0&pageSize=20&fromDate=2021-01-01&toDate=2023-06-27&search`
 
-![POC1xpath](/assets/img/POC1.png)
+![POC1xpath](/assets/img/NPM1.png)
 _HTTPRequest_
 
 
@@ -52,14 +52,14 @@ _HTTPRequest_
 
 1. Looking at the parameters `fromDate` and `toDate`, there was possibility of the SQL Injection. I simply added a single quote(`'`) as value for the `toDate` parameter and forwarded the request. The server responded with an error message `SQL ERROR`.
 
-    ![POC2xpath](/assets/img/POC2.png)
+    ![POC2xpath](/assets/img/NPM1.png)
     _HTTPRequestwithInjectedSingleQuote_
 
     * I attempted manual exploitation using **UNION-based, Boolean-based and Blind-based** SQL Injection payloads but none of them were successful. I was consistently receiving the `SQL ERROR` message. I also tried using the obfuscated payloads but that also didn't work and SQLMAP didn't provide any results.
 
 2. Using the payload, `' updatexml(null,concat(0x0a,(select version())),null) '` provided the SQL error stack-trace with the entire query and also received **XPATH syntax error: Query result** in the response. It was observed that application was using `MariaDB` DBMS. I noticed that the **EXTRACTVALUE** function was filtered by firewall so we cannot use it.
 
-    ![POC3xpath](/assets/img/POC4.png)
+    ![POC3xpath](/assets/img/NPM1.png)
     _UPDATEXML func. to extract version and server_
 
     * If we observe the screenshot, the payload is injected in the middle of SQL query. Please note that if the XPath query is syntactically incorrect then only we will receive the error `XPATH syntax error:` . 
@@ -67,7 +67,7 @@ _HTTPRequest_
 
 3. Instead of `version()` , I provided the `database()` to get the name of the current database.
 
-    ![POC4xpath](/assets/img/POC5.png)
+    ![POC4xpath](/assets/img/NPM1.png)
     _UPDATEXML func. to extract current databasename_
 
 
