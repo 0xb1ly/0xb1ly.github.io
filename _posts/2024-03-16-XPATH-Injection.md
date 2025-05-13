@@ -3,7 +3,7 @@ title: "XPATH Injection - Exploiting Error-based SQL Injection"
 date: 2025-03-16 22:00:00 +0900
 categories: [mobile]
 tags: [mobile, sqlinjection]
-comments: false
+comments: true
 ---
 
 Hey hackers!! Today, I'm explaining the exploitation of the error-based SQL injection via XPATH injection. This vulnerability was discovered during a private pen-test engagement.
