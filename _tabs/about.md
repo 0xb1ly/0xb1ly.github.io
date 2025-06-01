@@ -48,7 +48,7 @@ This blog is my little space on the internet where I share knowledge, experience
 I'm always open to connect, collaborate, and learn together.
 
 - [LinkedIn](https://www.linkedin.com/in/yash-mahesh)
-- [Twitter](https://twitter.com/ph1z3r) *(optional)*
+- [Twitter](https://twitter.com/0xb1ly) *(optional)*
 
 
 ---
